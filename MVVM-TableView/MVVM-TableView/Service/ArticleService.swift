@@ -39,7 +39,7 @@ class ArticleService: APIService {
     
     
     static func getArticles(completion: @escaping([Article]?) -> Void) {
-        let URL = url("/api/home")
+        let URL = url("")
         
         let dataRequest = AF.request(URL,
                                      method: .get,

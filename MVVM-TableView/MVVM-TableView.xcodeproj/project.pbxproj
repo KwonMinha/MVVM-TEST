@@ -23,7 +23,9 @@
 		D1449DE626A89E960083418D /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1449DE526A89E960083418D /* APIService.swift */; };
 		D1449DE826A8A22A0083418D /* ArticleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1449DE726A8A22A0083418D /* ArticleService.swift */; };
 		D19AA65A26A8CC1C006FA368 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19AA65926A8CC1C006FA368 /* APIConstants.swift */; };
-		D19AA65E26A8D1C3006FA368 /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19AA65D26A8D1C3006FA368 /* ArticleViewModel.swift */; };
+		D19AA66126A8E7C6006FA368 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19AA66026A8E7C6006FA368 /* ArticleTableViewCell.swift */; };
+		D19AA66526A8EB54006FA368 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19AA66426A8EB54006FA368 /* Extension.swift */; };
+		D19AA66826A8F033006FA368 /* ArticleListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19AA66726A8F033006FA368 /* ArticleListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,7 +72,9 @@
 		D1449DE526A89E960083418D /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		D1449DE726A8A22A0083418D /* ArticleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleService.swift; sourceTree = "<group>"; };
 		D19AA65926A8CC1C006FA368 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
-		D19AA65D26A8D1C3006FA368 /* ArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
+		D19AA66026A8E7C6006FA368 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
+		D19AA66426A8EB54006FA368 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		D19AA66726A8F033006FA368 /* ArticleListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListViewModel.swift; sourceTree = "<group>"; };
 		DAB2373932C3DB16EF700F5B /* Pods-MVVM-TableView-MVVM-TableViewUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM-TableView-MVVM-TableViewUITests.release.xcconfig"; path = "Target Support Files/Pods-MVVM-TableView-MVVM-TableViewUITests/Pods-MVVM-TableView-MVVM-TableViewUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FE8844A20DB318845DF3DC7C /* Pods-MVVM-TableViewTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM-TableViewTests.release.xcconfig"; path = "Target Support Files/Pods-MVVM-TableViewTests/Pods-MVVM-TableViewTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -157,6 +161,7 @@
 				D1449DE026A89D4F0083418D /* Base */,
 				D1449DDF26A89D340083418D /* ViewModel */,
 				D1449DDC26A89D110083418D /* Model */,
+				D19AA66226A8EB2E006FA368 /* Utility */,
 				D1449DDB26A89D080083418D /* View */,
 			);
 			path = "MVVM-TableView";
@@ -200,6 +205,7 @@
 		D1449DDD26A89D1C0083418D /* Cotroller */ = {
 			isa = PBXGroup;
 			children = (
+				D19AA65F26A8E7B1006FA368 /* Cell */,
 				D1449DAB26A85B080083418D /* ViewController.swift */,
 			);
 			path = Cotroller;
@@ -216,7 +222,7 @@
 		D1449DDF26A89D340083418D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				D19AA65D26A8D1C3006FA368 /* ArticleViewModel.swift */,
+				D19AA66726A8F033006FA368 /* ArticleListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -248,6 +254,30 @@
 				D1449DE726A8A22A0083418D /* ArticleService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		D19AA65F26A8E7B1006FA368 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D19AA66026A8E7C6006FA368 /* ArticleTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		D19AA66226A8EB2E006FA368 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				D19AA66326A8EB3E006FA368 /* Extension */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		D19AA66326A8EB3E006FA368 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D19AA66426A8EB54006FA368 /* Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -488,14 +518,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D19AA66126A8E7C6006FA368 /* ArticleTableViewCell.swift in Sources */,
 				D1449DAC26A85B080083418D /* ViewController.swift in Sources */,
 				D1449DE626A89E960083418D /* APIService.swift in Sources */,
 				D1449DA826A85B080083418D /* AppDelegate.swift in Sources */,
+				D19AA66526A8EB54006FA368 /* Extension.swift in Sources */,
 				D1449DE826A8A22A0083418D /* ArticleService.swift in Sources */,
 				D1449DE226A89D5C0083418D /* Dynamic.swift in Sources */,
 				D19AA65A26A8CC1C006FA368 /* APIConstants.swift in Sources */,
-				D19AA65E26A8D1C3006FA368 /* ArticleViewModel.swift in Sources */,
 				D1449DAA26A85B080083418D /* SceneDelegate.swift in Sources */,
+				D19AA66826A8F033006FA368 /* ArticleListViewModel.swift in Sources */,
 				D1449DDA26A89CC80083418D /* Article.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
