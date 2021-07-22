@@ -27,6 +27,8 @@ extension ArticleListViewModel {
     }
 }
 
+////
+
 struct ArticleViewModel {
     private let article: Article
 }
