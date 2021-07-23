@@ -30,8 +30,7 @@ struct APIConstants {
     // MARK: - URLs
     
     // Base URL
-    //static let baseURL = "http://13.209.82.176:5000"
-    static let baseURL = "https://newsapi.org/v1/articles?source=the-next-web&sortBy=latest&apiKey=0cf790498275413a9247f8b94b3843fd"
+    static let baseURL = "https://newsapi.org/v2/top-headlines?country=us&apiKey=e9b514c39c5f456db8ed4ecb693b0040"
 
     // MARK: - /travel URLs
     static let tripURL = baseURL + "/travel"

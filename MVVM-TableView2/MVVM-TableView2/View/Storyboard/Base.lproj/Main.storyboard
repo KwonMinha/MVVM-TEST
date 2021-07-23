@@ -28,22 +28,35 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="174"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pBv-5z-EOA">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pBv-5z-EOA">
                                                     <rect key="frame" x="20" y="11" width="374" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="pBv-5z-EOA" secondAttribute="height" multiplier="374:21" id="YkP-37-pIP"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ycg-kN-e4Z">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ycg-kN-e4Z">
                                                     <rect key="frame" x="20" y="40" width="374" height="123"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="Ycg-kN-e4Z" secondAttribute="height" multiplier="374:123" id="LRE-cT-vC7"/>
+                                                    </constraints>
                                                     <color key="textColor" systemColor="labelColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="Ycg-kN-e4Z" secondAttribute="bottom" constant="11" id="Rmf-Qf-d9C"/>
+                                                <constraint firstAttribute="trailing" secondItem="pBv-5z-EOA" secondAttribute="trailing" constant="20" symbolic="YES" id="TUV-SA-7oF"/>
+                                                <constraint firstItem="pBv-5z-EOA" firstAttribute="leading" secondItem="fu8-Z9-HXl" secondAttribute="leading" constant="20" symbolic="YES" id="edq-ko-D5O"/>
+                                                <constraint firstItem="Ycg-kN-e4Z" firstAttribute="leading" secondItem="fu8-Z9-HXl" secondAttribute="leading" constant="20" symbolic="YES" id="hQs-E6-bIJ"/>
+                                                <constraint firstItem="pBv-5z-EOA" firstAttribute="top" secondItem="fu8-Z9-HXl" secondAttribute="top" constant="11" id="nhu-9b-Ae8"/>
+                                                <constraint firstItem="Ycg-kN-e4Z" firstAttribute="top" secondItem="pBv-5z-EOA" secondAttribute="bottom" constant="8" symbolic="YES" id="rcn-jV-ZiJ"/>
+                                                <constraint firstAttribute="trailing" secondItem="Ycg-kN-e4Z" secondAttribute="trailing" constant="20" symbolic="YES" id="sWH-JE-wUU"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="descriptionTextView" destination="Ycg-kN-e4Z" id="LgG-a0-sUE"/>
@@ -63,6 +76,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="neP-8g-fYE"/>
+                    <connections>
+                        <outlet property="tableView" destination="5AF-bs-Hcb" id="v2m-AF-uWF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

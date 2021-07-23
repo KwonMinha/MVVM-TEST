@@ -52,7 +52,7 @@ class ArticleService {
             switch dataResponse.result {
             
             case .success:
-                
+
                 guard let value = dataResponse.value else { return }
                 let articleData = try? JSONDecoder().decode(ArticleList.self, from: value)
                 completion(articleData?.articles)

@@ -8,22 +8,51 @@
 import UIKit
 
 class ArticleViewController: UIViewController {
+    
+    private var viewModel: ArticleListViewModel!
 
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        initViewModel()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func initViewModel() {
+        ArticleService.getArticles { (articles) in
+            if let articles = articles {
+                self.viewModel = ArticleListViewModel(articles: articles)
+            }
+            
+            DispatchQueue.main.async {
+                self.tableView.delegate = self
+                self.tableView.dataSource = self
+                self.tableView.reloadData()
+            }
+        }
     }
-    */
+
+
+}
+
+extension ArticleViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.articles.value.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleTableViewCell", for: indexPath) as? ArticleTableViewCell else { fatalError("ArticleTableViewCell not found") }
+        
+        let articleList = self.viewModel.articles.value[indexPath.row]
+        cell.textLabel?.text = articleList.title
+        cell.descriptionTextView?.text = articleList.description
+        return cell
+    }
+
 
 }
