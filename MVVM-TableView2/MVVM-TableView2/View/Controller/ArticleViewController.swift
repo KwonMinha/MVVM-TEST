@@ -30,6 +30,7 @@ class ArticleViewController: UIViewController {
         viewModel.articles.bind { (_) in
             self.showTableView()
         }
+        
         self.viewModel.fetchArticles()
     }
     

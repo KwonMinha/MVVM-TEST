@@ -11,7 +11,6 @@ class ArticleTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
-    
     var item: Article? {
         didSet {
             guard let article = item else { return }
