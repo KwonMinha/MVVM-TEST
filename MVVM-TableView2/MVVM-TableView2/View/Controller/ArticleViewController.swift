@@ -9,34 +9,51 @@ import UIKit
 
 class ArticleViewController: UIViewController {
     
-    private var viewModel: ArticleListViewModel!
-
+    lazy var viewModel: ArticleViewModel = {
+        let viewModel = ArticleViewModel()
+        return viewModel
+    }()
+    
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        initViewModel()
+        
+        setupTableView()
     }
     
-    func initViewModel() {
-        ArticleService.getArticles { (articles) in
-            if let articles = articles {
-                self.viewModel = ArticleListViewModel(articles: articles)
-            }
-            
-            DispatchQueue.main.async {
-                self.tableView.delegate = self
-                self.tableView.dataSource = self
+    func setupTableView() {
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
+        
+        viewModel.articles.bind { (_) in
+            self.showTableView()
+        }
+        self.viewModel.fetchArticles()
+    }
+    
+    func showTableView() {
+        DispatchQueue.main.async {
+            if self.viewModel.articles.value.isEmpty {
+                self.showEmptyView()
+            } else {
                 self.tableView.reloadData()
+                self.tableView.isHidden = false
             }
         }
     }
-
-
+    
+    func showEmptyView() {
+        //        self.tableView.isHidden = true
+        //        self.emptyView.isHidden = false
+        //        self.activityIndicator.isHidden = true
+    }
+    
+    
 }
 
-extension ArticleViewController: UITableViewDelegate, UITableViewDataSource {
+extension ArticleViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -46,13 +63,20 @@ extension ArticleViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleTableViewCell", for: indexPath) as? ArticleTableViewCell else { fatalError("ArticleTableViewCell not found") }
-        
-        let articleList = self.viewModel.articles.value[indexPath.row]
-        cell.textLabel?.text = articleList.title
-        cell.descriptionTextView?.text = articleList.description
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleTableViewCell", for: indexPath) as! ArticleTableViewCell
+        cell.item = self.viewModel.articles.value[indexPath.row]
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+}
 
-
+extension ArticleViewController: UITableViewDelegate {
+    
 }

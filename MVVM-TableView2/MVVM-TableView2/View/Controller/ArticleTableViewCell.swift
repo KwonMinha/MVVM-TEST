@@ -9,7 +9,16 @@ import UIKit
 
 class ArticleTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
+    
+    var item: Article? {
+        didSet {
+            guard let article = item else { return }
+            self.titleLabel.text = article.title
+            self.descriptionLabel.text = article.description
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
