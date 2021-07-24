@@ -5,6 +5,7 @@
 //  Created by 권민하 on 2021/07/22.
 //
 
+import Foundation
 
 // MARK: 해당 파일 안에는 API 관련 상수들을 추가해주세요!!
 // - 싱글턴으로 변수를 생성해주세요.
@@ -24,44 +25,14 @@ struct APIConstants {
 
     // MARK: - Keys
     
-    static let jwtToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjBlYzY5ZTQ2MmU3YzhiYzU4YWEwMjM3In0sImlhdCI6MTYyNjEwNjM0MCwiZXhwIjoxNjI2NDY2MzQwfQ.WhyVGeI9V9LaOpgXg71rqiCdSTE42jbP9YxpA1i2Ap4"
+    static let jwtToken = ""
     
     // MARK: - URLs
     
     // Base URL
-    static let baseURL = "http://13.209.82.176:5000"
+    static let baseURL = "https://newsapi.org/v2/top-headlines?country=us&apiKey=e9b514c39c5f456db8ed4ecb693b0040"
 
     // MARK: - /travel URLs
     static let tripURL = baseURL + "/travel"
-    static let inviteCodeURL = baseURL + "/travel/group/:inviteCode"    // 여행 참여, 여행 정보 조회
-    static let addTripURL = baseURL + "/travel" // 여행 생성 뷰 post
-    static let addTripImageURL = baseURL + "/image" // 여행 생성 뷰 이미지 호출
-    static let editTripURL = baseURL + "/travel/:groupId" // 여행 데이터 편집
-    static let getTripInform = baseURL + "/travel/:groupId"
-
-    // MARK: - /auth/user URLs
-    
-    // MARK: - /schedule
-    static let getSpecificDateURL = baseURL + "/schedule/daily/:groupId/:date"
-    static let addPlanURL = baseURL + "/schedule/:groupId"
-    static let scheduleURL = baseURL + "/schedule"
-    static let getScheduleURL = baseURL + "/schedule/:groupId/:scheduleId"
-    static let editPlanURL = baseURL + "/schedule/:groupId/:scheduleId"
-
-    // MARK: - /board
-    static let boardURL = baseURL + "/board"
-    static let postBoardURL = baseURL + "/board/:groupId/:tag"          // 여행 보드 추가
-    
-    // MARK: - /tendency
-    static let styleURL = baseURL + "/tendency"
-    static let styleQuestionURL = baseURL + "/tendency/question"
-    static let styleResultSaveURL = baseURL + "/tendency/:groupId"
-    static let styleTestMainURL = baseURL + "/tendency/result/main"
-    
-    // MARK: - /image
-    
-    // MARK: - /user/myPage
-
+    static let editTripURL = baseURL + "/travel/:groupId"
 }
-
-    // MARK: - URLs

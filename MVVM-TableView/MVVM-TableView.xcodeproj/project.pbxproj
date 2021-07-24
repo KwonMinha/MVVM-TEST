@@ -189,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				D1449DDE26A89D270083418D /* Storyboard */,
+				D19AA65F26A8E7B1006FA368 /* Cell */,
 				D1449DDD26A89D1C0083418D /* Cotroller */,
 			);
 			path = View;
@@ -205,7 +206,6 @@
 		D1449DDD26A89D1C0083418D /* Cotroller */ = {
 			isa = PBXGroup;
 			children = (
-				D19AA65F26A8E7B1006FA368 /* Cell */,
 				D1449DAB26A85B080083418D /* ViewController.swift */,
 			);
 			path = Cotroller;

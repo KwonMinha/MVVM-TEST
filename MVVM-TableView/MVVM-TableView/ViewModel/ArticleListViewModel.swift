@@ -17,7 +17,6 @@ extension ArticleListViewModel {
     }
 
     func numberOfRowsInSection(_ section: Int) -> Int {
-        print(self.articles.count)
         return self.articles.count
     }
 
@@ -26,8 +25,6 @@ extension ArticleListViewModel {
         return ArticleViewModel(article)
     }
 }
-
-////
 
 struct ArticleViewModel {
     private let article: Article
