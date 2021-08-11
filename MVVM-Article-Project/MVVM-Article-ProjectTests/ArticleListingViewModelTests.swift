@@ -16,84 +16,98 @@ class ArticleListingViewModelTests: XCTestCase {
     var viewModel: ArticleListViewModel!
     var vc: ArticleListTableViewController!
     var dataSource: GenericDataSource<ArticleList>!
-    var mockApiClient: MockAPIClient!
+    var service: MockArticleService!
     
     override func setUpWithError() throws {
         try super.setUpWithError()
         
         // Initializing properties
-        dataSource = GenericDataSource<ArticleList>()
-        viewModel = ArticleListViewModel(apiClient: APIClient2(), dataSource: dataSource)
-        vc = ArticleListTableViewController()
-        mockApiClient = MockAPIClient()
+        self.dataSource = GenericDataSource<ArticleList>()
+        self.service = MockArticleService()
+        self.viewModel = ArticleListViewModel(service: service, dataSource: dataSource)
+        self.vc = ArticleListTableViewController()
     }
     
     override func tearDownWithError() throws {
         
         // Deinitializing propertise
-        viewModel = nil
-        vc = nil
-        dataSource = nil
-        mockApiClient = nil
+        self.viewModel = nil
+        self.service = nil
+        self.vc = nil
+        self.dataSource = nil
         
         try super.tearDownWithError()
     }
     
+    func testFetchWithNoService() {
+        let expectation = XCTestExpectation(description: "No service Article List")
+        
+        // giving no service to a view model
+        viewModel.service = nil
+        
+        // expected to not be able to fetch ''
+        viewModel.onErrorHandling = { error in
+            expectation.fulfill()
+        }
+        
+        viewModel.fetchArticleList()
+
+        wait(for: [expectation], timeout: 5.0)
+    }
+    
     func testFetchArticleListWorking() {
         let expectation = XCTestExpectation(description: "Article List fetch")
-        
-        // giving a service mocking vehicles list
-        mockApiClient.articleListModel =
-            ArticleListModel(articleList: [ArticleList(title: "1",
-                                                       description: "2",
-                                                       image: "3")])
-        
+ 
+        // giving a service mocking
+        service.articles = ArticleListModel(articleList: [ArticleList(title: "kwon", description: "minha", image: "")])
         
 //        guard let data = FileManager.readJson(forResource: "Mock") else {
 //            XCTAssert(false, "Can't get data from sample.json")
 //            return
 //        }
         
-        viewModel.onError = { _ in
-            XCTAssert(false, "Failed to fetch Article list")
+        viewModel.onErrorHandling = { _ in
+            XCTAssert(false, "ViewModel should not be able to fetch without service")
         }
         
         dataSource.data.addObserver(self) { _ in
-            print("1111")
+            print("-------------------------------------------")
             print(self.dataSource.data.value)
+            
             expectation.fulfill()
         }
         
-        mockApiClient.getArticles { result in
-            switch result {
-            case .success(let articles):
-                self.dataSource?.data.value = articles.articleList ?? []
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
         viewModel.fetchArticleList()
+     
         wait(for: [expectation], timeout: 5.0)
     }
     
+    func testFetchNoCurrencies() {
+        let expectation = XCTestExpectation(description: "No Article List")
+        
+        // giving a service mocking error during fetching currencies
+        service.articles = nil
+        
+        // expected completion to fail
+        viewModel.onErrorHandling = { error in
+            expectation.fulfill()
+        }
+        
+        viewModel.fetchArticleList()
+
+        wait(for: [expectation], timeout: 5.0)
+    }
+
 }
 
-/// MOCK APIClient class for testing
-/// Conforming APIClient protocol to call web service
-
-class MockAPIClient: APIClientProtocol {
+class MockArticleService: ArticleServiceProtocol {
     
-    var articleListModel : ArticleListModel?
-
-    @discardableResult
-    func performRequest<T>(route: APIRouter, completion: @escaping (Result<T, AFError>) -> Void) -> DataRequest where T : Decodable {
-        return AF.request(route)
-            .responseDecodable { (response: DataResponse<T, AFError>) in
-                completion(response.result)
-            }
+    var articles: ArticleListModel?
+    
+    func getArticleList(completion: @escaping ((NetworkResult<Any>) -> Void)) {
+        if let articles = articles {
+            completion(NetworkResult.success(articles.articleList ?? []))
+        }
     }
     
-    func getArticles(completion: @escaping (Result<ArticleListModel, AFError>) -> Void) {
-        performRequest(route: APIRouter.articles, completion: completion)
-    }
 }

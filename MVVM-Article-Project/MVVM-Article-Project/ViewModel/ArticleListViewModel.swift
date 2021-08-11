@@ -11,48 +11,42 @@ import Alamofire
 class ArticleListViewModel {
     
     // MARK: - Properties
-    var apiClient: APIClient2
+    
+    var service: ArticleServiceProtocol?
     var dataSource: GenericDataSource<ArticleList>?
-    var onError: ((String) -> ())?
-    
-    /// Property with didSet to notify error message on network response failure
-    
-    var errorMessage: String = "" {
-        didSet {
-            onError?(errorMessage)
-        }
-    }
+    var onErrorHandling : ((APIError?) -> Void)?
     
     // MARK: - Initializer
     
-    init(apiClient: APIClient2, dataSource: GenericDataSource<ArticleList>?) {
-        self.apiClient = apiClient
+    init(service: ArticleServiceProtocol, dataSource: GenericDataSource<ArticleList>?) {
+        self.service = service
         self.dataSource = dataSource
     }
     
     func fetchArticleList() {
-        
-        //APIClient
-        
-//        APIClient.getArticles{ result in
-//            switch result {
-//            case .success(let articles):
-//                self.dataSource?.data.value = articles.articleList ?? []
-//            case .failure(let error):
-//                print(error.localizedDescription)
-//            }
-//        }
-
-        //APIClient2
-        
-        apiClient.getArticles { result in
-            switch result {
-            case .success(let articles):
-                self.dataSource?.data.value = articles.articleList ?? []
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
+        guard let service = service else {
+            onErrorHandling?(APIError.networkFailed)
+            return
         }
-
+        
+        service.getArticleList(completion: { (response) in
+            DispatchQueue.main.async {
+                switch(response) {
+                case .success(let data):
+                    if let mainData = data as? [ArticleList] {
+                        self.dataSource?.data.value = mainData
+                    }
+                case .requestErr(let message):
+                    print("requestERR", message)
+                case .pathErr:
+                    print("pathERR")
+                case .serverErr:
+                    print("serverERR")
+                case .networkFail:
+                    print("networkERR")
+                }
+            }
+        })
     }
+    
 }

@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		284483078FF57BC051EF6CB8 /* Pods_MVVM_Article_Project_MVVM_Article_ProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA553264581C2F75785DF57B /* Pods_MVVM_Article_Project_MVVM_Article_ProjectUITests.framework */; };
 		6AD547E86411AADC809C2AEF /* Pods_MVVM_Article_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABDEFCF9BBF4EEEC2FC9447 /* Pods_MVVM_Article_Project.framework */; };
+		D11666BE26C3FA5E00DC5E36 /* ArticleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11666BD26C3FA5E00DC5E36 /* ArticleService.swift */; };
+		D11666C026C3FAC900DC5E36 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11666BF26C3FAC900DC5E36 /* NetworkResult.swift */; };
+		D1676A8626C42164002E869E /* Enum+APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1676A8526C42164002E869E /* Enum+APIError.swift */; };
+		D1676AEC26C43C11002E869E /* SecondArticleListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1676AEB26C43C11002E869E /* SecondArticleListTableViewCell.swift */; };
+		D1676AEE26C43C1A002E869E /* SecondArticleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1676AED26C43C1A002E869E /* SecondArticleListViewController.swift */; };
+		D1676AF026C43C42002E869E /* SecondArticleListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1676AEF26C43C42002E869E /* SecondArticleListViewModel.swift */; };
+		D1676AF226C43C83002E869E /* SecondArticleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1676AF126C43C83002E869E /* SecondArticleService.swift */; };
 		D1B51DA126C01DA400928FF3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B51DA026C01DA400928FF3 /* AppDelegate.swift */; };
 		D1B51DA326C01DA400928FF3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B51DA226C01DA400928FF3 /* SceneDelegate.swift */; };
 		D1B51DA826C01DA400928FF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1B51DA626C01DA400928FF3 /* Main.storyboard */; };
@@ -24,8 +31,7 @@
 		D1B51DEC26C0216E00928FF3 /* GenericDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B51DEB26C0216E00928FF3 /* GenericDataSource.swift */; };
 		D1B51DEE26C0217D00928FF3 /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B51DED26C0217D00928FF3 /* Dynamic.swift */; };
 		D1B51DF026C0219300928FF3 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B51DEF26C0219300928FF3 /* APIRouter.swift */; };
-		D1B51DF226C0219B00928FF3 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B51DF126C0219B00928FF3 /* APIConstants.swift */; };
-		D1B51DF426C021A300928FF3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B51DF326C021A300928FF3 /* Constants.swift */; };
+		D1B51DF426C021A300928FF3 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B51DF326C021A300928FF3 /* APIConstants.swift */; };
 		D1B51DF626C0227200928FF3 /* ArticleListCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B51DF526C0227200928FF3 /* ArticleListCollectionViewController.swift */; };
 		D1B51DF826C0227A00928FF3 /* ArticleListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B51DF726C0227A00928FF3 /* ArticleListTableViewController.swift */; };
 		D1B51DFA26C0228A00928FF3 /* ArticleListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B51DF926C0228A00928FF3 /* ArticleListTableViewCell.swift */; };
@@ -33,12 +39,8 @@
 		D1B51DFE26C022AB00928FF3 /* ArticleListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B51DFD26C022AB00928FF3 /* ArticleListModel.swift */; };
 		D1B51E0026C022B500928FF3 /* ArticleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B51DFF26C022B500928FF3 /* ArticleList.swift */; };
 		D1B51E0226C0264B00928FF3 /* ArticleListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B51E0126C0264B00928FF3 /* ArticleListViewModel.swift */; };
-		D1B51E0426C02ACF00928FF3 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B51E0326C02ACF00928FF3 /* APIClient.swift */; };
-		D1B51E0626C02AE900928FF3 /* APIClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B51E0526C02AE900928FF3 /* APIClientProtocol.swift */; };
-		D1B51E1126C0D89800928FF3 /* APIClient2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B51E1026C0D89800928FF3 /* APIClient2.swift */; };
 		D1B51E1326C0E0E000928FF3 /* ArticleListingViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B51E1226C0E0E000928FF3 /* ArticleListingViewModelTests.swift */; };
 		D1B51E1826C0E41000928FF3 /* Mock.json in Resources */ = {isa = PBXBuildFile; fileRef = D1B51E1726C0E41000928FF3 /* Mock.json */; };
-		D1B51E1E26C2DD4000928FF3 /* FileDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B51E1D26C2DD4000928FF3 /* FileDataService.swift */; };
 		E135C9C2174083AD2F0455DE /* Pods_MVVM_Article_ProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9256BC25FB7493E52D40ADE8 /* Pods_MVVM_Article_ProjectTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +70,13 @@
 		9256BC25FB7493E52D40ADE8 /* Pods_MVVM_Article_ProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVM_Article_ProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3CB204D4E06A4F24C180B23 /* Pods-MVVM-Article-ProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM-Article-ProjectTests.release.xcconfig"; path = "Target Support Files/Pods-MVVM-Article-ProjectTests/Pods-MVVM-Article-ProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 		CA553264581C2F75785DF57B /* Pods_MVVM_Article_Project_MVVM_Article_ProjectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVM_Article_Project_MVVM_Article_ProjectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D11666BD26C3FA5E00DC5E36 /* ArticleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleService.swift; sourceTree = "<group>"; };
+		D11666BF26C3FAC900DC5E36 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
+		D1676A8526C42164002E869E /* Enum+APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Enum+APIError.swift"; sourceTree = "<group>"; };
+		D1676AEB26C43C11002E869E /* SecondArticleListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondArticleListTableViewCell.swift; sourceTree = "<group>"; };
+		D1676AED26C43C1A002E869E /* SecondArticleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondArticleListViewController.swift; sourceTree = "<group>"; };
+		D1676AEF26C43C42002E869E /* SecondArticleListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondArticleListViewModel.swift; sourceTree = "<group>"; };
+		D1676AF126C43C83002E869E /* SecondArticleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondArticleService.swift; sourceTree = "<group>"; };
 		D1B51D9D26C01DA400928FF3 /* MVVM-Article-Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MVVM-Article-Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1B51DA026C01DA400928FF3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1B51DA226C01DA400928FF3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,8 +98,7 @@
 		D1B51DEB26C0216E00928FF3 /* GenericDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericDataSource.swift; sourceTree = "<group>"; };
 		D1B51DED26C0217D00928FF3 /* Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
 		D1B51DEF26C0219300928FF3 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
-		D1B51DF126C0219B00928FF3 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
-		D1B51DF326C021A300928FF3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D1B51DF326C021A300928FF3 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		D1B51DF526C0227200928FF3 /* ArticleListCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListCollectionViewController.swift; sourceTree = "<group>"; };
 		D1B51DF726C0227A00928FF3 /* ArticleListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListTableViewController.swift; sourceTree = "<group>"; };
 		D1B51DF926C0228A00928FF3 /* ArticleListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListTableViewCell.swift; sourceTree = "<group>"; };
@@ -98,12 +106,8 @@
 		D1B51DFD26C022AB00928FF3 /* ArticleListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListModel.swift; sourceTree = "<group>"; };
 		D1B51DFF26C022B500928FF3 /* ArticleList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleList.swift; sourceTree = "<group>"; };
 		D1B51E0126C0264B00928FF3 /* ArticleListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListViewModel.swift; sourceTree = "<group>"; };
-		D1B51E0326C02ACF00928FF3 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
-		D1B51E0526C02AE900928FF3 /* APIClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientProtocol.swift; sourceTree = "<group>"; };
-		D1B51E1026C0D89800928FF3 /* APIClient2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient2.swift; sourceTree = "<group>"; };
 		D1B51E1226C0E0E000928FF3 /* ArticleListingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListingViewModelTests.swift; sourceTree = "<group>"; };
 		D1B51E1726C0E41000928FF3 /* Mock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Mock.json; sourceTree = "<group>"; };
-		D1B51E1D26C2DD4000928FF3 /* FileDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDataService.swift; sourceTree = "<group>"; };
 		D2D5007F0B25893A664ED249 /* Pods-MVVM-Article-Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM-Article-Project.release.xcconfig"; path = "Target Support Files/Pods-MVVM-Article-Project/Pods-MVVM-Article-Project.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -158,6 +162,42 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D1676A8726C42167002E869E /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				D1676A8526C42164002E869E /* Enum+APIError.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		D1676AD826C42F78002E869E /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				D11666BD26C3FA5E00DC5E36 /* ArticleService.swift */,
+				D1676AF126C43C83002E869E /* SecondArticleService.swift */,
+				D1676AD926C42F8A002E869E /* Result */,
+				D1B51E0A26C0330C00928FF3 /* Routers */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		D1676AD926C42F8A002E869E /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				D11666BF26C3FAC900DC5E36 /* NetworkResult.swift */,
+			);
+			path = Result;
+			sourceTree = "<group>";
+		};
+		D1676AEA26C43BE4002E869E /* SecondTableView */ = {
+			isa = PBXGroup;
+			children = (
+				D1676AED26C43C1A002E869E /* SecondArticleListViewController.swift */,
+				D1676AEB26C43C11002E869E /* SecondArticleListTableViewCell.swift */,
+			);
+			path = SecondTableView;
+			sourceTree = "<group>";
+		};
 		D1B51D9426C01DA400928FF3 = {
 			isa = PBXGroup;
 			children = (
@@ -183,11 +223,10 @@
 		D1B51D9F26C01DA400928FF3 /* MVVM-Article-Project */ = {
 			isa = PBXGroup;
 			children = (
-				D1B51E0726C02FE700928FF3 /* Contract */,
+				D1676AD826C42F78002E869E /* Service */,
 				D1B51DDC26C020D400928FF3 /* Model */,
 				D1B51DDB26C020CF00928FF3 /* ViewModel */,
 				D1B51DDA26C020CB00928FF3 /* View */,
-				D1B51DD926C020C600928FF3 /* Network */,
 				D1B51DD826C020C100928FF3 /* Base */,
 				D1B51DD526C020A000928FF3 /* Utility */,
 				D1B51E1626C0E3BC00928FF3 /* Resource */,
@@ -230,6 +269,7 @@
 		D1B51DD526C020A000928FF3 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				D1676A8726C42167002E869E /* Enum */,
 				D1B51DD726C020AD00928FF3 /* Extension */,
 				D1B51DD626C020A900928FF3 /* Protocol */,
 			);
@@ -264,18 +304,6 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
-		D1B51DD926C020C600928FF3 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				D1B51E0326C02ACF00928FF3 /* APIClient.swift */,
-				D1B51E1026C0D89800928FF3 /* APIClient2.swift */,
-				D1B51E0526C02AE900928FF3 /* APIClientProtocol.swift */,
-				D1B51E0A26C0330C00928FF3 /* Routers */,
-				D1B51E1D26C2DD4000928FF3 /* FileDataService.swift */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
 		D1B51DDA26C020CB00928FF3 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -289,6 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				D1B51E0126C0264B00928FF3 /* ArticleListViewModel.swift */,
+				D1676AEF26C43C42002E869E /* SecondArticleListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -313,8 +342,9 @@
 		D1B51DE626C0212C00928FF3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D1B51DE826C0213A00928FF3 /* CollectionView */,
 				D1B51DE726C0213400928FF3 /* TableView */,
+				D1676AEA26C43BE4002E869E /* SecondTableView */,
+				D1B51DE826C0213A00928FF3 /* CollectionView */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -337,18 +367,10 @@
 			path = CollectionView;
 			sourceTree = "<group>";
 		};
-		D1B51E0726C02FE700928FF3 /* Contract */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Contract;
-			sourceTree = "<group>";
-		};
 		D1B51E0A26C0330C00928FF3 /* Routers */ = {
 			isa = PBXGroup;
 			children = (
-				D1B51DF126C0219B00928FF3 /* APIConstants.swift */,
-				D1B51DF326C021A300928FF3 /* Constants.swift */,
+				D1B51DF326C021A300928FF3 /* APIConstants.swift */,
 				D1B51DEF26C0219300928FF3 /* APIRouter.swift */,
 			);
 			path = Routers;
@@ -601,26 +623,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1676AEC26C43C11002E869E /* SecondArticleListTableViewCell.swift in Sources */,
+				D1676A8626C42164002E869E /* Enum+APIError.swift in Sources */,
 				D1B51DE426C0211600928FF3 /* Extension+CollectionView.swift in Sources */,
 				D1B51DEE26C0217D00928FF3 /* Dynamic.swift in Sources */,
 				D1B51DF826C0227A00928FF3 /* ArticleListTableViewController.swift in Sources */,
 				D1B51DFC26C0229700928FF3 /* ArticleListCollectionViewCell.swift in Sources */,
 				D1B51DE226C0210100928FF3 /* Extension+UITableView.swift in Sources */,
 				D1B51DE026C020F000928FF3 /* Protocol+ResuableCell.swift in Sources */,
-				D1B51E0626C02AE900928FF3 /* APIClientProtocol.swift in Sources */,
 				D1B51DA126C01DA400928FF3 /* AppDelegate.swift in Sources */,
-				D1B51E1E26C2DD4000928FF3 /* FileDataService.swift in Sources */,
-				D1B51E0426C02ACF00928FF3 /* APIClient.swift in Sources */,
 				D1B51DEA26C0214F00928FF3 /* BaseViewController.swift in Sources */,
-				D1B51E1126C0D89800928FF3 /* APIClient2.swift in Sources */,
 				D1B51E0226C0264B00928FF3 /* ArticleListViewModel.swift in Sources */,
+				D1676AEE26C43C1A002E869E /* SecondArticleListViewController.swift in Sources */,
 				D1B51DF626C0227200928FF3 /* ArticleListCollectionViewController.swift in Sources */,
 				D1B51DFE26C022AB00928FF3 /* ArticleListModel.swift in Sources */,
-				D1B51DF426C021A300928FF3 /* Constants.swift in Sources */,
+				D1676AF226C43C83002E869E /* SecondArticleService.swift in Sources */,
+				D1676AF026C43C42002E869E /* SecondArticleListViewModel.swift in Sources */,
+				D1B51DF426C021A300928FF3 /* APIConstants.swift in Sources */,
 				D1B51DF026C0219300928FF3 /* APIRouter.swift in Sources */,
-				D1B51DF226C0219B00928FF3 /* APIConstants.swift in Sources */,
 				D1B51DFA26C0228A00928FF3 /* ArticleListTableViewCell.swift in Sources */,
 				D1B51DA326C01DA400928FF3 /* SceneDelegate.swift in Sources */,
+				D11666BE26C3FA5E00DC5E36 /* ArticleService.swift in Sources */,
+				D11666C026C3FAC900DC5E36 /* NetworkResult.swift in Sources */,
 				D1B51DDE26C020E000928FF3 /* Protocol+CollectionViewCellDelegate.swift in Sources */,
 				D1B51DEC26C0216E00928FF3 /* GenericDataSource.swift in Sources */,
 				D1B51E0026C022B500928FF3 /* ArticleList.swift in Sources */,

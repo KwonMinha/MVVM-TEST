@@ -21,8 +21,7 @@ class ArticleListTableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //viewModel = ArticleListViewModel(dataSource: dataSource)
-        viewModel = ArticleListViewModel(apiClient: APIClient2(), dataSource: dataSource)
+        viewModel = ArticleListViewModel(service: ArticleService(), dataSource: dataSource)
         
         bindViewModel()
     }

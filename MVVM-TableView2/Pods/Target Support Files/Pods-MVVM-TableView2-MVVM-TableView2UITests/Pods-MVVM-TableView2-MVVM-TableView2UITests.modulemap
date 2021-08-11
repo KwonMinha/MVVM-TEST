@@ -1,6 +1,0 @@
-framework module Pods_MVVM_TableView2_MVVM_TableView2UITests {
-  umbrella header "Pods-MVVM-TableView2-MVVM-TableView2UITests-umbrella.h"
-
-  export *
-  module * { export * }
-}
