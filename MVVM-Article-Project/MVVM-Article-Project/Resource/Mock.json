@@ -1,0 +1,14 @@
+{
+    "articles": [
+        {
+            "title": "title1",
+            "description": "descriptoin1",
+            "urlToImage": "https://sportshub.cbsistatic.com/i/r/2021/03/28/43f71821-fbd4-4c01-9238-304bc54faa9f/thumbnail/1200x675/1c0ccbf4798c9f82c0211a4ae3f63204/ngannou-knockout-miocic.jpg"
+        },
+        {
+            "title": "title2",
+            "description": "description2",
+            "urlToImage": "https://sportshub.cbsistatic.com/i/r/2021/03/28/43f71821-fbd4-4c01-9238-304bc54faa9f/thumbnail/1200x675/1c0ccbf4798c9f82c0211a4ae3f63204/ngannou-knockout-miocic.jpg"
+        }
+    ]
+}
