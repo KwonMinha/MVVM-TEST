@@ -1,0 +1,22 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'APIClient-Project' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for APIClient-Project
+pod 'Alamofire', '~> 5.4'
+pod 'Kingfisher', '~> 6.0'
+pod 'SwiftLint'
+
+  target 'APIClient-ProjectTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'APIClient-ProjectUITests' do
+    # Pods for testing
+  end
+
+end
